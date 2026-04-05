@@ -65,8 +65,13 @@
 />
 
 <div id="games" class="flex w-full flex-col items-center bg-[#A7E257] p-8 pt-18 text-center text-white">
-  <div class="mb-6">
+  <div class="mb-6 flex flex-row gap-5 items-center">
     <OutlinedText textSize="3rem" strokeWidth="8px">Games</OutlinedText>
+    <img
+      src="src/lib/assets/page/ninesliced_games_mascot_flipx.svg"
+      alt="Ninesliced mascot"
+      class="h-[80px]"
+    />
   </div>
 
   <ProjectDisplay 
@@ -278,7 +283,7 @@
         <OutlinedText textSize="3rem" strokeWidth="8px">About</OutlinedText>
       </div>
 
-      <div class="mb-12 flex flex-row flex-wrap items-center">
+      <div class="mb-12 w-full max-w-[1000px] flex flex-row flex-wrap items-center justify-center gap-y-5">
         {#each shuffle([
           {
             name: "Nolan Carlisi",
@@ -362,7 +367,7 @@
             text: "Github",
           },
         ] as social}
-          <div class="bg-[#EEF49A] p-2 px-5 rounded-full">
+          <div class="bg-[#EEF49A] my-4 p-2 px-5 rounded-full">
             <a href={social.url} class="flex flex-row gap-2 items-center">
               <img
                 src={social.icon}
@@ -374,12 +379,12 @@
           </div>
         {/each}
       </div>
-      <div>
+      <div class="flex flex-col items-center">
         <OutlinedText textSize="1.5rem" strokeWidth="6px">
-          nin&#101;sliced&#64;gm&#97;il&#46;com
+          Games: nin&#101;sliced&#64;gm&#97;il&#46;com
         </OutlinedText>
         <OutlinedText textSize="1.5rem" strokeWidth="6px">
-          nin&#101;sliced.modding&#64;gm&#97;il&#46;com
+          Mods: nin&#101;sliced.modding&#64;gm&#97;il&#46;com
         </OutlinedText>
       </div>
 
