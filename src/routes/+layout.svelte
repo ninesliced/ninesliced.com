@@ -10,17 +10,17 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 
-<nav class="fixed top-0 z-300 flex w-full flex-row justify-end gap-6 bg-[#FFD439] p-4 px-8">
-  <a href="#" class="top-0 left-0 inline-block text-2xl font-bold">
+<nav class="fixed top-0 z-300 flex w-full flex-row justify-end gap-6 bg-[#A7E257] p-4 px-8">
+  <a href="#games" class="top-0 left-0 inline-block text-2xl font-bold">
     <OutlinedText textSize="1.5rem" strokeWidth="6px">Games</OutlinedText>
   </a>
 
-  <a href="#" class="top-0 left-0 inline-block text-2xl font-bold">
-    <OutlinedText textSize="1.5rem" strokeWidth="6px">About</OutlinedText>
+  <a href="#modding" class="top-0 left-0 inline-block text-2xl font-bold">
+    <OutlinedText textSize="1.5rem" strokeWidth="6px">Modding</OutlinedText>
   </a>
 
-  <a href="#" class="top-0 left-0 inline-block text-2xl font-bold">
-    <OutlinedText textSize="1.5rem" strokeWidth="6px">Contact</OutlinedText>
+  <a href="#about" class="top-0 left-0 inline-block text-2xl font-bold">
+    <OutlinedText textSize="1.5rem" strokeWidth="6px">About</OutlinedText>
   </a>
 </nav>
 
