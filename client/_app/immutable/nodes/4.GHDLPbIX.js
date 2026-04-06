@@ -1,1 +1,0 @@
-import"../chunks/C9ISfvow.js";import"../chunks/XlD7PU82.js";import{C as e}from"../chunks/DHGZvhRD.js";function c(t){const o=[{type:"image",src:"https://images.unsplash.com/photo-1506744038136-46273834b3fb",alt:"Landscape"},{type:"video",src:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}];e(t,{get slides(){return o}})}export{c as component};
