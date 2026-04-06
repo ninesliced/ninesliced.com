@@ -32,15 +32,11 @@ if (fs.existsSync(deployDir)) {
 }
 fs.mkdirSync(deployDir, { recursive: true });
 
-// Copy prerendered pages to root
+// Copy prerendered pages directly to root
 console.log('Copying prerendered pages...');
 copyDirRecursive(pagesDir, deployDir);
 
-// Copy client assets (_app directory and other assets)
-console.log('Copying client assets...');
-copyDirRecursive(clientDir, deployDir);
-
-// Copy static files (CNAME, robots.txt) - overwrite if exists
+// Copy static files (CNAME, robots.txt) to root
 console.log('Copying static files...');
 const staticFiles = ['CNAME', 'robots.txt'];
 staticFiles.forEach(file => {
@@ -54,23 +50,11 @@ staticFiles.forEach(file => {
 
 // Verify files were copied
 console.log('Files in deploy directory:');
-const walkDir = (dir, fileList = []) => {
-  fs.readdirSync(dir).forEach(file => {
-    const filepath = path.join(dir, file);
-    const stat = fs.statSync(filepath);
-    if (stat.isDirectory()) {
-      walkDir(filepath, fileList);
-    } else {
-      fileList.push(filepath.replace(deployDir, ''));
-    }
-  });
-  return fileList;
-};
-walkDir(deployDir).slice(0, 30).forEach(f => console.log(`  ${f}`));
-console.log(`  ... and more files`);
+const files = fs.readdirSync(deployDir);
+files.forEach(f => console.log(`  ${f}`));
 
 // Deploy with gh-pages
-console.log('\nDeploying to GitHub Pages...');
+console.log('Deploying to GitHub Pages...');
 execSync(`npx gh-pages -d "${deployDir}"`, { stdio: 'inherit' });
 
 // Clean up
