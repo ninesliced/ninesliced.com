@@ -2,6 +2,7 @@
   import BlobImage from './BlobImage.svelte';
   import OutlinedText from './OutlinedText.svelte';
   import ProjectDisplay from './ProjectDisplay.svelte';
+  import Separator from '$lib/Separator.svelte';
 
   function shuffle(array: Array<any>) {
     // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -31,11 +32,11 @@
       alt="Ninesliced logo"
       class="outline-red h-80 w-auto p-6"
     />
-    <img
-      src="src/lib/assets/page/section_separator_up.svg"
-      alt="separator"
-      class="absolute bottom-0 left-0 w-full min-w-[500px] select-none"
-    />
+    
+    <div class="absolute bottom-0 left-0 w-full select-none">
+      <Separator type="up" bgColor="#A7E257" position="bottom-0" />
+    </div>
+
   </div>
 
   <div class="w-full bg-[#EEF49A] text-center text-white">
@@ -60,11 +61,7 @@
     </div>
   </div>
 
-  <img
-    src="src/lib/assets/page/section_separator_down.svg"
-    alt="separator"
-    class="top-0 relative left-0 w-full min-w-[500px] bg-[#A7E257] select-none"
-  />
+  <Separator type="down" bgColor="#A7E257" position="top-0" />
 
   <div id="games" class="flex w-full flex-col items-center bg-[#A7E257] p-8 pt-18 text-center text-white">
     <div class="mb-6 flex flex-row gap-5 items-center">
@@ -238,17 +235,9 @@
     </ProjectDisplay>
   </div>
 
-  <img
-    src="src/lib/assets/page/section_separator_up.svg"
-    alt="separator"
-    class="top-0 relative left-0 w-full min-w-[500px] bg-[#A7E257] select-none"
-  />
+  <Separator type="up" bgColor="#A7E257" position="top-0" />
 
-  <img
-    src="src/lib/assets/page/section_separator_up_orange.svg"
-    alt="separator"
-    class="top-0 relative left-0 w-full min-w-[500px] bg-[#EEF49A] select-none"
-  />
+  <Separator type="up_orange" bgColor="#EEF49A" position="top-0" />
 
   <div id="modding" class="flex w-full flex-col items-center bg-[#FAAD38] p-8 py-18 text-center text-white">
     <div class="mb-6 flex flex-row gap-5 items-center">
@@ -310,17 +299,9 @@
   </div>
 
 
-  <img
-    src="src/lib/assets/page/section_separator_up.svg"
-    alt="separator"
-    class="relative left-0 w-full min-w-[500px] select-none bg-[#FAAD38]"
-  />
+  <Separator type="up" bgColor="#FAAD38" position="" />
 
-  <img
-    src="src/lib/assets/page/section_separator_down.svg"
-    alt="separator"
-    class="relative left-0 w-full min-w-[500px] select-none bg-[#A7E257]"
-  />
+  <Separator type="down" bgColor="#A7E257" position="" />
 
   <div id="about" class="flex w-full flex-col items-center ">
     <div class="w-full bg-[#A7E257] text-center text-white p-8 py-18">
@@ -363,7 +344,7 @@
               link: "https://notgoyome.github.io",
               linkText: "Website",
               linkIcon: "src/lib/assets/page/logos/website.svg",
-              image: "src/lib/assets/page/about/guillaumealt.jpg",
+              image: "src/lib/assets/page/about/guillaumedrawing.png",
             },
             {
               name: "Théodore Billotte",
@@ -479,8 +460,8 @@
 
 
 <style>
-  .page {
+  :global(html) {
     scroll-behavior: smooth;
-    scroll-padding-top: 200px;
+    scroll-padding-top: 60px;
   }
 </style>

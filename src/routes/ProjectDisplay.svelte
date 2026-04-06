@@ -25,7 +25,7 @@
 			<slot></slot>
 		</div>
 
-		<p class="flex flex-row gap-4 justify-center">
+		<p class="flex flex-row gap-4 justify-center flex-wrap">
 			{#each links as link}
 				<a href={link.url}>
 					<OutlinedText textSize="1.2rem" strokeWidth="6px">{link.text}</OutlinedText>

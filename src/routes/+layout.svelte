@@ -7,8 +7,10 @@
   let { children } = $props();
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
-
+<svelte:head>
+  <title>Ninesliced</title>
+  <link rel="icon" href={favicon} />
+</svelte:head>
 
 <nav class="fixed top-0 z-300 flex w-full flex-row items-center justify-end gap-3 bg-[#A7E257] p-4 px-8">
   <a href="https://x.com/ninesliced" class="flex flex-row gap-2 items-center">

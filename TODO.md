@@ -1,14 +1,10 @@
-- [ ] fix missing "é" characters and the like
-- [ ] add interpolation to "#" link scrolling
-- [ ] add y offset to "#" link scrolling
-- [ ] add back ninsclied.com/globs redirect
-- [ ] add /bugscraper redirect too + other projects ?
-- [ ] looping & responsive separators
-- [ ] title & icon
-
-----
-
 DONE 
+- [x] looping & responsive separators
+- [x] add back ninsclied.com/globs redirect
+- [x] title & icon
+- [x] add y offset to "#" link scrolling
+- [x] add interpolation to "#" link scrolling
+- [x] fix missing "é" characters and the like
 - [x] bettermap images
 - [x] footer
 - [x] add details to about section
