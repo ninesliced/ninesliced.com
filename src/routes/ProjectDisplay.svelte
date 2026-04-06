@@ -39,6 +39,3 @@
 		<!-- <img src={imgSrc} alt={imgAlt} class="rounded-2xl" /> -->
 	</div>
 </div>
-
-<style>
-</style>
