@@ -28,7 +28,7 @@
 
   <div class="flex h-screen w-full flex-col items-center justify-center bg-[#A7E257]">
     <img
-      src="src/lib/assets/branding/logo/ninesliced_logo_transp.svg"
+      src="/assets/branding/logo/ninesliced_logo_transp.svg"
       alt="Ninesliced logo"
       class="outline-red h-80 w-auto p-6"
     />
@@ -48,7 +48,7 @@
 
       <div>
         <img
-          src="src/lib/assets/page/slicelings_stack.svg"
+          src="/assets/page/slicelings_stack.svg"
           alt="Sliceling stack"
           class="my-12 w-50"
         />
@@ -67,7 +67,7 @@
     <div class="mb-6 flex flex-row gap-5 items-center">
       <OutlinedText textSize="3rem" strokeWidth="8px">Games</OutlinedText>
       <img
-        src="src/lib/assets/page/ninesliced_games_mascot_flipx.svg"
+        src="/assets/page/ninesliced_games_mascot_flipx.svg"
         alt="Ninesliced mascot"
         class="h-[80px]"
       />
@@ -83,31 +83,31 @@
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/bugscraper/1.png',
+          src: '/assets/projects/bugscraper/1.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/bugscraper/2.png',
+          src: '/assets/projects/bugscraper/2.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/bugscraper/3.png',
+          src: '/assets/projects/bugscraper/3.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/bugscraper/4.png',
+          src: '/assets/projects/bugscraper/4.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/bugscraper/5.png',
+          src: '/assets/projects/bugscraper/5.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/bugscraper/6.png',
+          src: '/assets/projects/bugscraper/6.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/bugscraper/7.png',
+          src: '/assets/projects/bugscraper/7.png',
         },
       ]}
       links = {[
@@ -149,31 +149,31 @@
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/globs/01.png',
+          src: '/assets/projects/globs/01.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/globs/02.png',
+          src: '/assets/projects/globs/02.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/globs/03.png',
+          src: '/assets/projects/globs/03.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/globs/04.png',
+          src: '/assets/projects/globs/04.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/globs/05.png',
+          src: '/assets/projects/globs/05.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/globs/06.png',
+          src: '/assets/projects/globs/06.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/globs/07.png',
+          src: '/assets/projects/globs/07.png',
         },
       ]}
       links={[
@@ -213,11 +213,11 @@
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/maby/01.png',
+          src: '/assets/projects/maby/01.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/maby/02.png',
+          src: '/assets/projects/maby/02.png',
         },
       ]}
       links={[
@@ -242,7 +242,7 @@
   <div id="modding" class="flex w-full flex-col items-center bg-[#FAAD38] p-8 py-18 text-center text-white">
     <div class="mb-6 flex flex-row gap-5 items-center">
       <img
-        src="src/lib/assets/page/ninesliced_modding_mascot.svg"
+        src="/assets/page/ninesliced_modding_mascot.svg"
         alt="Ninesliced modding mascot"
         class="h-[80px]"
       />
@@ -261,19 +261,19 @@
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/bettermap/bigmap.png',
+          src: '/assets/projects/bettermap/bigmap.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/bettermap/waypoint_edit-png.png',
+          src: '/assets/projects/bettermap/waypoint_edit-png.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/bettermap/bettermap_config_ui-png.png',
+          src: '/assets/projects/bettermap/bettermap_config_ui-png.png',
         },
         {
           type: 'image',
-          src: 'src/lib/assets/projects/bettermap/cave_mode_2-png.png',
+          src: '/assets/projects/bettermap/cave_mode_2-png.png',
         },
       ]}
       links={[
@@ -329,44 +329,44 @@
               name: "Nolan Carlisi",
               link: "https://arkanyota.com",
               linkText: "Website",
-              linkIcon: "src/lib/assets/page/logos/website.svg",
-              image: "src/lib/assets/page/about/nolan.jpg",
+              linkIcon: "/assets/page/logos/website.svg",
+              image: "/assets/page/about/nolan.jpg",
             },
             {
               name: "Léo Bernard",
               link: "https://www.yolwoocle.com",
               linkText: "Website",
-              linkIcon: "src/lib/assets/page/logos/website.svg",
-              image: "src/lib/assets/page/about/leo.jpg",
+              linkIcon: "/assets/page/logos/website.svg",
+              image: "/assets/page/about/leo.jpg",
             },
             {
               name: "Guillaume Tran",
               link: "https://notgoyome.github.io",
               linkText: "Website",
-              linkIcon: "src/lib/assets/page/logos/website.svg",
-              image: "src/lib/assets/page/about/guillaumedrawing.png",
+              linkIcon: "/assets/page/logos/website.svg",
+              image: "/assets/page/about/guillaumedrawing.png",
             },
             {
               name: "Théodore Billotte",
               link: "https://www.linkedin.com/in/theodore-billotte",
               linkText: "LinkedIn",
-              linkIcon: "src/lib/assets/page/logos/linkedin.svg",
-              image: "src/lib/assets/page/about/theodore.jpg",
+              linkIcon: "/assets/page/logos/linkedin.svg",
+              image: "/assets/page/about/theodore.jpg",
             },
             {
               name: "Louis Rollet",
               link: "https://www.linkedin.com/in/louis-rollet/",
               linkText: "LinkedIn",
-              linkIcon: "src/lib/assets/page/logos/linkedin.svg",
+              linkIcon: "/assets/page/logos/linkedin.svg",
 
-              image: "src/lib/assets/page/about/louisrollet.jpg",
+              image: "/assets/page/about/louisrollet.jpg",
             },
             {
               name: "Alexis Belmonte",
               link: "https://www.linkedin.com/in/alexis-belmonte/",
               linkText: "LinkedIn",
-              linkIcon: "src/lib/assets/page/logos/linkedin.svg",
-              image: "src/lib/assets/page/about/alexis.jpg",
+              linkIcon: "/assets/page/logos/linkedin.svg",
+              image: "/assets/page/about/alexis.jpg",
             },
           ]) as person}
             <div class="flex flex-col w-60 gap-2 items-center">
@@ -395,37 +395,37 @@
         <div class="mb-8 flex flex-row gap-3 items-center justify-center flex-wrap max-w-200">
           {#each [
             {
-              icon:"src/lib/assets/page/logos/twitter.svg", 
+              icon:"/assets/page/logos/twitter.svg", 
               url: "https://x.com/ninesliced",
               text: "Twitter",
             },
             {
-              icon:"src/lib/assets/page/logos/bluesky.svg", 
+              icon:"/assets/page/logos/bluesky.svg", 
               url: "https://bsky.app/profile/ninesliced.com",
               text: "Bluesky",
             },
             {
-              icon:"src/lib/assets/page/logos/itchio.svg", 
+              icon:"/assets/page/logos/itchio.svg", 
               url: "https://ninesliced.itch.io/",
               text: "itch.io",
             },
             {
-              icon:"src/lib/assets/page/logos/steam.svg", 
+              icon:"/assets/page/logos/steam.svg", 
               url: "https://store.steampowered.com/publisher/ninesliced",
               text: "Steam",
             },
             {
-              icon:"src/lib/assets/page/logos/instagram.svg", 
+              icon:"/assets/page/logos/instagram.svg", 
               url: "https://instagram.com/ninesliced_games",
               text: "Instagram",
             },
             {
-              icon:"src/lib/assets/page/logos/youtube.svg", 
+              icon:"/assets/page/logos/youtube.svg", 
               url: "https://youtube.com/@ninesliced_games",
               text: "YouTube",
             },
             {
-              icon:"src/lib/assets/page/logos/github.svg", 
+              icon:"/assets/page/logos/github.svg", 
               url: "https://github.com/ninesliced",
               text: "Github",
             },
