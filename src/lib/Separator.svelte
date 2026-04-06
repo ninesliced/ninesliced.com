@@ -11,5 +11,5 @@
 <!--   -->
 <div
     class="{position} {position ? ' ' : ''} w-full left-0 relative h-16 bg-repeat-x bg-left bg-[length:auto_100%] select-none"
-    style={`background-color: ${bgColor}; background-image: url(/assets/page/section_separator_${type}.svg)`}
+    style={`background-color: ${bgColor}; background-image: url(src/lib/assets/page/section_separator_${type}.svg)`}
 ></div>

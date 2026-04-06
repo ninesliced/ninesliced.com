@@ -15,28 +15,28 @@
 <nav class="fixed top-0 z-300 flex w-full flex-row items-center justify-end gap-3 bg-[#A7E257] p-4 px-8">
   <a href="https://x.com/ninesliced" class="flex flex-row gap-2 items-center">
     <img
-      src="/assets/page/logos/twitter.svg"
+      src="src/lib/assets/page/logos/twitter.svg"
       alt="Twitter"
       class="h-10"
     />
   </a>
   <a href="https://bsky.app/profile/ninesliced.com" class="flex flex-row gap-2 items-center">
     <img
-      src="/assets/page/logos/bluesky.svg"
+      src="src/lib/assets/page/logos/bluesky.svg"
       alt="Bluesky"
       class="h-10"
     />
   </a>
   <a href="https://instagram.com/ninesliced_games" class="flex flex-row gap-2 items-center">
     <img
-      src="/assets/page/logos/instagram.svg"
+      src="src/lib/assets/page/logos/instagram.svg"
       alt="Instagram"
       class="h-10"
     />
   </a>
   <a href="https://youtube.com/@ninesliced_games" class="flex flex-row gap-2 items-center">
     <img
-      src="/assets/page/logos/youtube.svg"
+      src="src/lib/assets/page/logos/youtube.svg"
       alt="Youtube"
       class="h-10"
     />
