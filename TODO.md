@@ -1,3 +1,7 @@
+- [ ] random blobimage rotation on chrome
+- [ ] div padding for introduciton on mobile
+- [ ] first separator doesn't display correctly on firefox mobile
+
 DONE 
 - [x] looping & responsive separators
 - [x] add back ninsclied.com/globs redirect
