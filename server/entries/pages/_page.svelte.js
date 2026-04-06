@@ -1,0 +1,473 @@
+import { a2 as fallback, a as attr, a3 as attr_style, a4 as bind_props, a5 as stringify, a6 as attr_class, a7 as slot, a8 as ensure_array_like, e as escape_html } from "../../chunks/renderer.js";
+import { O as OutlinedText, t as twitterLogo, b as blueskyLogo, i as instagramLogo, y as youtubeLogo } from "../../chunks/OutlinedText.js";
+import { C as Carousel } from "../../chunks/Carousel.js";
+function BlobImage($$renderer, $$props) {
+  $$renderer.component(($$renderer2) => {
+    let src = $$props["src"];
+    let alt = fallback($$props["alt"], "Masked image");
+    const clipId = "blob-clip-" + Math.random().toString(36).substr(2, 9);
+    const rotation = Math.floor(Math.random() * 360) - 180;
+    const center = 200 / 2;
+    const scale = 1 / 200;
+    $$renderer2.push(`<div class="relative w-full max-w-[200px] aspect-square"><svg class="absolute h-0 w-0" aria-hidden="true"><defs><clipPath${attr("id", clipId)} clipPathUnits="objectBoundingBox"${attr("transform", `rotate(${stringify(rotation)}, ${stringify(center)}, ${stringify(center)}) scale(${stringify(scale)}, ${stringify(scale)})`)}><path d="M27.9847 74.5761C28.5683 50.358 37.9376 38.5501 44.8233 35.0564C55.7613 29.5067 74.3363 33.0467 87.0588 33.0467C99.7813 33.0466 103.945 19.167 121.532 21.2041C139.119 23.2412 145.34 34.5659 158.428 40.6711C174.119 47.9905 169.819 58.0528 172.999 74.5761C177.93 100.203 186 97.5387 186 112.183C186 124.874 178.052 131.619 176.035 138.941C173.748 147.24 175.429 149.97 170.938 159.75C162.64 177.821 143.248 173.551 131.977 173.932C120.706 174.312 114.665 185.646 102.348 183.796C90.0318 181.946 83.1064 168.815 74.5 168C65.8936 167.185 48.3655 176.106 37.6058 165.145C26.8461 154.184 28.5993 149.663 27.9848 135.613C27.6106 127.057 12.8739 118.061 14.0689 104.617C15.1915 91.9866 27.6848 87.0215 27.9847 74.5761Z" fill="white"></path><path d="M80.021 29.0612C69.1035 29.0613 61.9026 24.5188 69.1033 16.3521C76.3041 8.18543 91.0956 12.4163 93.1565 19.7391C94.2279 23.5461 89.5547 29.061 80.021 29.0612Z" fill="white"></path><path d="M195.725 80.553C197.051 91.2269 192.185 95.1445 189.198 94.8928C186.404 94.6573 181.111 88.2873 180.473 80.5845C179.756 71.9252 194.188 68.1869 195.725 80.553Z" fill="white"></path><path d="M188.918 62.2831C190.422 66.545 187.693 68.9698 185.343 69.2621C180.882 69.8171 178.807 67.201 179.919 63.0277C181.283 57.9076 186.95 56.7089 188.918 62.2831Z" fill="white"></path><path d="M84.3288 192.617C81.1493 196.121 70.9313 194.655 65.9336 191.922C60.9359 189.188 52.8215 180.348 60.9707 175.262C65.3602 172.522 72.0478 173.222 76.4468 174.858C80.2123 176.258 91.0641 185.194 84.3288 192.617Z" fill="white"></path></clipPath></defs></svg> <img${attr("src", src)}${attr("alt", alt)} class="w-full h-full object-cover"${attr_style("", { "clip-path": `url(#${stringify(clipId)})` })}/></div>`);
+    bind_props($$props, { src, alt });
+  });
+}
+function ProjectDisplay($$renderer, $$props) {
+  let id = $$props["id"];
+  let title = fallback($$props["title"], "");
+  let inverted = fallback($$props["inverted"], false);
+  let slides = fallback($$props["slides"], () => [], true);
+  let links = fallback($$props["links"], () => [], true);
+  let backgroundColor = fallback($$props["backgroundColor"], "#EEF49A");
+  $$renderer.push(`<div${attr("id", id)}${attr_class(`flex w-full ${stringify(inverted ? "flex-row-reverse" : "flex-row")} m-5 flex-wrap justify-center gap-3 items-center`)}><div class="flex w-1/2 max-w-120 grow flex-col items-center justify-center rounded-2xl p-6 gap-6"${attr_style(`background-color: ${backgroundColor}`)}><div>`);
+  OutlinedText($$renderer, {
+    textSize: "2rem",
+    strokeWidth: "8px",
+    children: ($$renderer2) => {
+      $$renderer2.push(`<!---->${escape_html(title)}`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----></div> <div class="flex flex-col gap-3 text-[#222123]"><!--[-->`);
+  slot($$renderer, $$props, "default", {});
+  $$renderer.push(`<!--]--></div> <p class="flex flex-row gap-4 justify-center flex-wrap"><!--[-->`);
+  const each_array = ensure_array_like(links);
+  for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
+    let link = each_array[$$index];
+    $$renderer.push(`<a${attr("href", link.url)}>`);
+    OutlinedText($$renderer, {
+      textSize: "1.2rem",
+      strokeWidth: "6px",
+      children: ($$renderer2) => {
+        $$renderer2.push(`<!---->${escape_html(link.text)}`);
+      },
+      $$slots: { default: true }
+    });
+    $$renderer.push(`<!----></a>`);
+  }
+  $$renderer.push(`<!--]--></p></div> <div class="w-128">`);
+  Carousel($$renderer, { slides });
+  $$renderer.push(`<!----></div></div>`);
+  bind_props($$props, { id, title, inverted, slides, links, backgroundColor });
+}
+function Separator($$renderer, $$props) {
+  let { type, bgColor, position = "top-0" } = $$props;
+  $$renderer.push(`<div${attr_class(`${stringify(position)} ${stringify(position ? " " : "")} w-full left-0 relative h-16 bg-repeat-x bg-left bg-[length:auto_100%] select-none`)}${attr_style(`background-color: ${bgColor}; background-image: url(src/lib/assets/page/section_separator_${type}.svg)`)}></div>`);
+}
+const ninenslicedLogo = "/_app/immutable/assets/ninesliced_logo_transp.BKHmNLsl.svg";
+const slicedingsStack = "/_app/immutable/assets/slicelings_stack.VugmaW1I.svg";
+const gamesMascot = "data:image/svg+xml,%3csvg%20width='306'%20height='243'%20viewBox='0%200%20306%20243'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_128_3860)'%3e%3cpath%20d='M227.481%2029.2689C168.346%2066.387%2074.7558%2089.7622%2017.9916%2085.8918C19.2181%20118.863%2040.4955%20169.15%2090.3398%20175.852L122.956%20175.682C140.934%20174.665%20162.251%20171.786%20176.745%20164.986L205.005%20148.702C251.679%20118.794%20243.032%2058.3685%20227.481%2029.2689Z'%20fill='%23CEE078'/%3e%3cpath%20d='M83.2903%20155.904L56.682%20133.074C63.3334%20126.951%20108.996%2093.0431%20113.348%2072.6063C118.168%2073.1704%20121.106%2079.2143%20124.619%2073.3438C124.708%2073.1653%20124.805%2072.9838%20124.928%2072.7981C125.38%2072.1153%20126.175%2071.3767%20128.156%2070.5251C128.609%2071.0394%20129.077%2071.6157%20129.561%2072.2494L134.423%2068.8313C160.755%2076.87%20185.953%2078.4861%20218.038%2099.7338C213.984%20115.989%20209.784%20122.998%20196.996%20129.732C189.35%20122.867%20157.878%20100.2%20136.995%2084.13C147.989%20104.076%20161.396%20136.586%20165.315%20149.785L125.228%20157.63C124.048%20141.997%20122.718%20118.179%20121.09%2097.1822C112.73%20119.564%2094.1821%20146.074%2083.2903%20155.904Z'%20fill='%2398CE5A'/%3e%3cpath%20d='M148.338%20173.625C48.9746%20196.14%2020.7323%20127.131%2019.4429%2091.2636L47.753%2089.3756C49.9714%20115.354%2076.4092%20163.511%20144.49%20148.727C206.817%20135.193%20219.926%2076.3714%20204.592%2044.1018L231.618%2033.9148C242.098%2069.4438%20261.978%20147.875%20148.338%20173.625Z'%20fill='%23428C6F'/%3e%3cpath%20d='M245.468%20111.981L240.518%20114.628L212.257%20130.913C212.257%20130.913%20223.621%20158.357%20242.706%20158.529C266.781%20158.746%20290.77%20136.29%20287.691%20116.372C284.613%2096.4539%20256.477%2099.3993%20245.468%20111.981Z'%20fill='%23428C6F'/%3e%3cpath%20d='M226.425%20107.043C219.688%20121.091%20216.266%20126.31%20205.019%20138.085L231.959%20148.004C227.417%20138.538%20227.576%20128.838%20238.361%20129.77L226.425%20107.043Z'%20fill='%23325D55'/%3e%3cpath%20d='M87.2931%20190.639L90.7421%20172.391L123.475%20173.165C123.475%20173.165%20132.798%20214.665%20116.399%20224.428C95.7113%20236.744%2060.3304%20228.906%2052.4814%20210.342C45.668%20194.228%2070.4233%20186.067%2087.2931%20190.639Z'%20fill='%23428C6F'/%3e%3cpath%20d='M122.493%20170.521C109.408%20171.416%2097.0214%20169.314%2086.9841%20166.714L93.7971%20190.691C101.324%20180.74%20112.54%20185.459%20118.861%20195.777L122.493%20170.521Z'%20fill='%23325D55'/%3e%3cpath%20d='M227.481%2029.2689C168.346%2066.387%2074.7556%2089.7621%2017.9914%2085.8917C16.7549%20137.074%2059.5436%20164.655%2088.8165%20174.651L87.471%20189.723C67.7676%20185.485%2040.4749%20195.69%2051.0132%20211.142C57.5677%20220.753%2097.4655%20235.93%20118.126%20225.978C129.977%20220.27%20124.55%20188.541%20122.443%20177.614C148.451%20177.795%20182.895%20167.85%20211.192%20140.714C211.192%20140.714%20237.802%20165.344%20255.799%20158.992C272.342%20153.154%20294.25%20128.567%20282.791%20112.522C268.562%2092.5977%20247.352%20105.37%20239.952%20123.324L229.441%20117.795C236.647%2093.2666%20244.767%2056.7982%20227.481%2029.2689Z'%20stroke='%23222123'%20stroke-width='14.8381'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M113.699%20119C115.635%20124.806%20111.891%20128.296%20104.068%20130.411C96.2438%20132.526%2086.9275%20131.739%2084.9857%20124.555C83.3901%20118.652%2089.2096%20110.534%2097.2219%20108.584C105.094%20106.669%20111.933%20113.703%20113.699%20119Z'%20fill='%23222123'/%3e%3cpath%20d='M131.123%20127.699C138.221%20132.421%20148.447%20127.82%20150.455%20121.032'%20stroke='%23222123'%20stroke-width='14.8381'%20stroke-linecap='round'/%3e%3cpath%20d='M186.297%2091.7918C188.406%2098.0725%20185.214%20103.031%20178.894%20106.478C172.053%20110.208%20165.142%20109.243%20161.931%20103.447C158.671%2097.5614%20160.498%2089.3859%20167.775%2086.2766C175.556%2082.9518%20184.188%2085.5111%20186.297%2091.7918Z'%20fill='%23222123'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_128_3860'%3e%3crect%20width='306'%20height='243'%20fill='white'%20transform='matrix(-1%200%200%201%20306%200)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e";
+const moddingMascot = "data:image/svg+xml,%3csvg%20width='297'%20height='232'%20viewBox='0%200%20297%20232'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_128_3324)'%3e%3cpath%20d='M222.347%2016.4212C162.241%2054.1482%2067.1157%2077.9068%209.42041%2073.9729C10.6671%20107.485%2032.2935%20158.597%2082.9554%20165.409L116.107%20165.236C134.379%20164.203%20156.046%20161.276%20170.778%20154.365L199.502%20137.813C246.941%20107.415%20238.152%2045.9982%20222.347%2016.4212Z'%20fill='%23F4EA9B'/%3e%3cpath%20d='M75.7884%20145.133L48.7436%20121.928C55.5041%20115.705%20101.916%2081.2407%20106.34%2060.4687C111.238%2061.042%20114.225%2067.1851%20117.795%2061.2183C117.885%2061.0368%20117.984%2060.8523%20118.109%2060.6637C118.569%2059.9696%20119.376%2059.2189%20121.39%2058.3534C121.85%2058.8761%20122.327%2059.4618%20122.818%2060.1059L127.76%2056.6317C154.524%2064.8023%20180.135%2066.445%20212.747%2088.0412C208.626%20104.563%20204.357%20111.687%20191.359%20118.531C183.588%20111.553%20151.6%2088.5149%20130.374%2072.1814C141.548%2092.4549%20155.175%20125.498%20159.158%20138.914L118.414%20146.887C117.215%20130.998%20115.863%20106.789%20114.208%2085.4478C105.711%20108.197%2086.8588%20135.141%2075.7884%20145.133Z'%20fill='%23EEC959'/%3e%3cpath%20d='M141.903%20163.147C40.9097%20186.031%2012.204%20115.89%2010.8936%2079.4341L39.668%2077.5152C41.9228%20103.92%2068.7943%20152.867%20137.992%20137.84C201.342%20124.084%20214.665%2064.2976%20199.08%2031.4986L226.549%2021.1446C237.201%2057.2564%20257.407%20136.974%20141.903%20163.147Z'%20fill='%23F3AA43'/%3e%3cpath%20d='M240.628%20100.49L235.597%20103.18L206.872%20119.731C206.872%20119.731%20218.423%20147.625%20237.82%20147.801C262.29%20148.021%20286.672%20125.197%20283.544%20104.952C280.415%2084.7073%20251.817%2087.7009%20240.628%20100.49Z'%20fill='%23F3AA43'/%3e%3cpath%20d='M221.273%2095.4728C214.426%20109.752%20210.948%20115.056%20199.516%20127.025L226.898%20137.106C222.282%20127.485%20222.443%20117.626%20233.405%20118.573L221.273%2095.4728Z'%20fill='%2393463F'/%3e%3cpath%20d='M79.8552%20180.439L83.3608%20161.892L116.63%20162.678C116.63%20162.678%20126.106%20204.858%20109.438%20214.782C88.4114%20227.3%2052.4502%20219.333%2044.4724%20200.465C37.5472%20184.087%2062.7086%20175.791%2079.8552%20180.439Z'%20fill='%23F3AA43'/%3e%3cpath%20d='M115.634%20159.99C102.335%20160.9%2089.7447%20158.763%2079.5428%20156.121L86.4675%20180.491C94.1174%20170.377%20105.518%20175.173%20111.942%20185.66L115.634%20159.99Z'%20fill='%2393463F'/%3e%3cpath%20d='M222.345%2016.4213C162.239%2054.1483%2067.1137%2077.9069%209.41839%2073.973C8.16159%20125.995%2051.6522%20154.028%2081.4053%20164.188L80.0378%20179.508C60.0112%20175.2%2032.2707%20185.572%2042.9819%20201.278C49.6439%20211.047%2090.1962%20226.472%20111.196%20216.358C123.241%20210.556%20117.725%20178.306%20115.584%20167.2C142.018%20167.384%20177.027%20157.276%20205.789%20129.694C205.789%20129.694%20232.835%20154.728%20251.127%20148.272C267.941%20142.339%20290.209%20117.348%20278.562%20101.04C264.099%2080.789%20242.542%2093.7707%20235.02%20112.02L224.337%20106.399C231.661%2081.4689%20239.914%2044.4023%20222.345%2016.4213Z'%20stroke='%232C2936'%20stroke-width='15.0815'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M126.151%20121.274C134.795%20127.025%20147.248%20121.421%20149.693%20113.156'%20stroke='%232C2936'%20stroke-width='18.0693'%20stroke-linecap='round'/%3e%3cpath%20d='M108.38%20107.461C108.191%20114.911%20102.626%20120.812%2092.9084%20122.538C83.1911%20124.264%2073.1396%20121.285%2071.8371%20113.953C70.5346%20106.621%2080.0993%2097.5743%2089.5445%2095.7428C99.2298%2093.8646%20108.554%20100.583%20108.38%20107.461Z'%20fill='%232C2936'/%3e%3cpath%20d='M188.689%2085.7727C190.574%2093.6175%20184.068%20100.046%20174.911%20103.042C165.893%20105.993%20154.592%2099.9417%20154.33%2091.8764C154.026%2082.4889%20160.313%2075.962%20169.801%2074.2765C179.289%2072.591%20186.804%2077.9278%20188.689%2085.7727Z'%20fill='%232C2936'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_128_3324'%3e%3crect%20width='297'%20height='232'%20fill='white'%20transform='matrix(-1%200%200%201%20297%200)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e";
+const websiteLogo = "/_app/immutable/assets/website.CcSJaZFf.svg";
+const linkedinLogo = "data:image/svg+xml,%3csvg%20width='75'%20height='75'%20viewBox='0%200%2075%2075'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M51.583%2010.75C58.5801%2010.75%2064.25%2016.4226%2064.25%2023.417V52.583C64.25%2059.5774%2058.5801%2065.25%2051.583%2065.25H22.417C15.4223%2065.25%209.75%2059.5777%209.75%2052.583V23.417C9.75%2016.4223%2015.4223%2010.75%2022.417%2010.75H51.583ZM47.0645%2032.0127C44.791%2031.6005%2042.4872%2032.5214%2041.3896%2033.9189C41.9607%2033.7267%2042.5619%2033.6163%2043.1787%2033.5967C44.837%2033.5439%2046.5136%2034.1685%2047.7578%2035.499C49.0044%2036.8323%2049.667%2038.7048%2049.667%2040.9082V50.333H51.417V38.502C51.417%2036.1728%2050.8017%2034.6736%2050.0439%2033.7314C49.2845%2032.7871%2048.2413%2032.2261%2047.0645%2032.0127ZM35.083%2050.333H36.833V40.9082C36.8331%2037.7547%2038.3824%2035.3824%2040.5371%2034.2783L36.833%2033.3438V31.917H35.083V50.333ZM24.667%2050.333H26.417V31.917H24.667V50.333ZM25.542%2021.9248C24.7889%2021.9248%2024.1457%2022.5466%2024.1455%2023.3496C24.1455%2024.1528%2024.7888%2024.7754%2025.542%2024.7754C26.2963%2024.7752%2026.9375%2024.1536%2026.9375%2023.3496C26.9373%2022.5467%2026.2949%2021.925%2025.542%2021.9248Z'%20fill='%23222123'%20stroke='%23222123'%20stroke-width='4.5'/%3e%3ccircle%20cx='25.5'%20cy='23.5'%20r='5.5'%20fill='%23222123'/%3e%3cpath%20d='M51.5833%2013H22.4167C16.6646%2013%2012%2017.6646%2012%2023.4167V52.5833C12%2058.3354%2016.6646%2063%2022.4167%2063H51.5833C57.3375%2063%2062%2058.3354%2062%2052.5833V23.4167C62%2017.6646%2057.3375%2013%2051.5833%2013ZM28.6667%2052.5833H22.4167V29.6667H28.6667V52.5833ZM25.5417%2027.025C23.5292%2027.025%2021.8958%2025.3792%2021.8958%2023.35C21.8958%2021.3208%2023.5292%2019.675%2025.5417%2019.675C27.5542%2019.675%2029.1875%2021.3208%2029.1875%2023.35C29.1875%2025.3792%2027.5562%2027.025%2025.5417%2027.025ZM53.6667%2052.5833H47.4167V40.9083C47.4167%2033.8917%2039.0833%2034.4229%2039.0833%2040.9083V52.5833H32.8333V29.6667H39.0833V33.3437C41.9917%2027.9563%2053.6667%2027.5583%2053.6667%2038.5021V52.5833Z'%20fill='white'/%3e%3c/svg%3e";
+const itchioLogo = "/_app/immutable/assets/itchio.CPhFkO8u.svg";
+const steamLogo = "data:image/svg+xml,%3csvg%20width='75'%20height='75'%20viewBox='0%200%2075%2075'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='37'%20cy='38'%20r='30'%20fill='%23222123'/%3e%3cpath%20d='M40.5118%2031.5485C40.5118%2028.9408%2042.6297%2026.8267%2045.2404%2026.8267C47.851%2026.8267%2049.9689%2028.9408%2049.9689%2031.5468C49.9689%2034.1544%2047.8527%2036.2669%2045.2404%2036.2669C45.2404%2036.2669%2045.2404%2036.2669%2045.2387%2036.2669C42.628%2036.2669%2040.5118%2034.1544%2040.5118%2031.5485C40.5118%2031.5485%2040.5101%2031.5485%2040.5101%2031.5468L40.5118%2031.5485ZM51.5173%2031.5585C51.5173%2028.0889%2048.6995%2025.2762%2045.2237%2025.2762C41.7478%2025.2762%2038.93%2028.0889%2038.93%2031.5585C38.93%2035.0281%2041.7478%2037.8408%2045.2237%2037.8408C48.6978%2037.8358%2051.5123%2035.0247%2051.5173%2031.5585ZM27.6923%2050.9406L24.6173%2049.6701C25.4926%2051.4674%2027.3082%2052.6845%2029.4077%2052.6845C31.6075%2052.6845%2033.4966%2051.3491%2034.3017%2049.445L34.315%2049.41C34.5739%2048.8065%2034.7259%2048.1029%2034.7259%2047.3659C34.7259%2044.4365%2032.3474%2042.0623%2029.4127%2042.0623C28.7363%2042.0623%2028.0899%2042.189%2027.4952%2042.4175L27.532%2042.4058L30.7105%2043.7179C32.1336%2044.3248%2033.1141%2045.712%2033.1141%2047.3259C33.1141%2049.4867%2031.3586%2051.239%2029.1939%2051.239C28.6527%2051.239%2028.1383%2051.129%2027.669%2050.9322L27.694%2050.9422L27.6923%2050.9406ZM36.9574%2013C23.834%2013.0017%2013.0707%2023.0804%2012.0067%2035.9051L12%2035.9951L25.4258%2041.5338C26.5415%2040.7635%2027.9228%2040.305%2029.4127%2040.305C29.4144%2040.305%2029.4161%2040.305%2029.4161%2040.305C29.548%2040.305%2029.6766%2040.3133%2029.8086%2040.3183L35.7799%2031.6885V31.5651C35.7849%2026.3632%2040.0107%2022.1484%2045.222%2022.1484C50.4366%2022.1484%2054.6641%2026.3682%2054.6641%2031.5735C54.6641%2036.7787%2050.4366%2040.9986%2045.222%2040.9986H45.0032L36.4947%2047.0642C36.4947%2047.1725%2036.5031%2047.2826%2036.5031%2047.3959C36.5031%2047.3976%2036.5031%2047.3993%2036.5031%2047.4009C36.5031%2051.3057%2033.3312%2054.4719%2029.4194%2054.4719C26.0003%2054.4719%2023.1458%2052.0527%2022.4827%2048.8365L22.4744%2048.7915L12.8619%2044.8183C15.9369%2055.3972%2025.5577%2063%2036.9557%2063C50.7874%2063%2062%2051.8076%2062%2038.0008C62%2024.1941%2050.7874%2013.0017%2036.9557%2013.0017L36.9574%2013Z'%20fill='white'/%3e%3c/svg%3e";
+const githubLogo = "data:image/svg+xml,%3csvg%20width='75'%20height='75'%20viewBox='0%200%2075%2075'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M37%209.75C52.6193%209.75%2065.2498%2022.4688%2065.25%2038.1445C65.25%2050.6677%2057.1713%2061.316%2046.0068%2065.082L45.8711%2065.1279L45.7314%2065.1562C44.5577%2065.3923%2043.3301%2065.1975%2042.3965%2064.3525C41.5364%2063.5741%2041.25%2062.5308%2041.25%2061.708C41.25%2061.2571%2041.2586%2060.3168%2041.2666%2059.0791C41.2747%2057.8316%2041.2822%2056.2601%2041.2822%2054.5186C41.2822%2052.557%2040.642%2051.6752%2040.3037%2051.3818L37.0342%2048.5479L33.8008%2051.375C33.5236%2051.6174%2033.059%2052.2336%2032.8926%2053.4766L32.7822%2054.3027V56.8389C32.7822%2057.9233%2032.7907%2058.9775%2032.7988%2059.8408C32.8068%2060.6907%2032.8154%2061.3835%2032.8154%2061.708C32.8154%2062.5412%2032.5218%2063.5808%2031.6553%2064.3525C30.7333%2065.1737%2029.5333%2065.3676%2028.3877%2065.166L28.2217%2065.1367L28.0625%2065.083C16.8334%2061.3191%208.75%2050.7046%208.75%2038.1445C8.75025%2022.4688%2021.3807%209.75%2037%209.75ZM49.0859%2025.1797C48.2168%2025.4232%2046.8171%2025.9997%2044.835%2027.3545L43.9658%2027.9492L42.9531%2027.6621C41.0827%2027.1331%2039.0791%2026.8653%2037.0654%2026.8652C35.0518%2026.8652%2033.0482%2027.1332%2031.1777%2027.6621L30.1699%2027.9473L29.3037%2027.3604C27.3204%2026.0177%2025.9168%2025.4397%2025.041%2025.1924C24.6237%2027.2417%2025.1367%2028.6392%2025.2461%2028.9141L25.7637%2030.2168L24.8223%2031.2559C23.5282%2032.6848%2022.7402%2034.5042%2022.7402%2036.7725C22.7403%2041.2859%2024.0801%2043.6497%2025.6914%2045.0166C27.4078%2046.4725%2029.8159%2047.1338%2032.5723%2047.4453L37.0469%2047.9512L41.5244%2047.4453C44.2869%2047.1332%2046.704%2046.4783%2048.4277%2045.0244C50.0434%2043.6616%2051.3896%2041.3005%2051.3896%2036.7725C51.3896%2034.4752%2050.6043%2032.6876%2049.3076%2031.2559L48.3662%2030.2168L48.8848%2028.9141C48.9946%2028.6379%2049.5078%2027.2353%2049.0859%2025.1797Z'%20fill='white'%20stroke='%23222123'%20stroke-width='4.5'/%3e%3c/svg%3e";
+const nolanImage = "/_app/immutable/assets/nolan.1uBCVTec.jpg";
+const leoImage = "/_app/immutable/assets/leo.Dijq9svC.jpg";
+const guillaumeImage = "/_app/immutable/assets/guillaumedrawing.B-ysDJf6.png";
+const theodoreImage = "/_app/immutable/assets/theodore.CEDBRE0F.jpg";
+const louisImage = "/_app/immutable/assets/louisrollet.xRbHPCUE.jpg";
+const alexisImage = "/_app/immutable/assets/alexis.DQ2EdUWK.jpg";
+function _page($$renderer) {
+  function shuffle(array) {
+    let currentIndex = array.length;
+    while (currentIndex != 0) {
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }
+  $$renderer.push(`<div class="page"><div class="flex h-screen w-full flex-col items-center justify-center bg-[#A7E257]"><img${attr("src", ninenslicedLogo)} alt="Ninesliced logo" class="outline-red h-80 w-auto p-6"/> <div class="absolute bottom-0 left-0 w-full select-none">`);
+  Separator($$renderer, { type: "up", bgColor: "#A7E257", position: "bottom-0" });
+  $$renderer.push(`<!----></div></div> <div class="w-full bg-[#EEF49A] text-center text-white"><div class="flex flex-col items-center justify-center py-18">`);
+  OutlinedText($$renderer, {
+    textSize: "2rem",
+    strokeWidth: "7px",
+    children: ($$renderer2) => {
+      $$renderer2.push(`<!---->When life gives you lemons,<br/> make video games`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----> <div><img${attr("src", slicedingsStack)} alt="Sliceling stack" class="my-12 w-50"/></div> `);
+  OutlinedText($$renderer, {
+    textSize: "1.5rem",
+    strokeWidth: "6px",
+    children: ($$renderer2) => {
+      $$renderer2.push(`<!---->Ninesliced is a french gamedev band, <br/> started by a group of friends just for fun.<br/>`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----></div></div> `);
+  Separator($$renderer, { type: "down", bgColor: "#A7E257", position: "top-0" });
+  $$renderer.push(`<!----> <div id="games" class="flex w-full flex-col items-center bg-[#A7E257] p-8 pt-18 text-center text-white"><div class="mb-6 flex flex-row gap-5 items-center">`);
+  OutlinedText($$renderer, {
+    textSize: "3rem",
+    strokeWidth: "8px",
+    children: ($$renderer2) => {
+      $$renderer2.push(`<!---->Games`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----> <img${attr("src", gamesMascot)} alt="Ninesliced mascot" class="h-[80px]"/></div> `);
+  ProjectDisplay($$renderer, {
+    id: "bugscraper",
+    title: "Bugscraper",
+    slides: [
+      {
+        type: "video",
+        src: "https://www.youtube.com/watch?v=a4RG1y2lU4E"
+      },
+      {
+        type: "image",
+        src: "src/lib/assets/projects/bugscraper/1.png"
+      },
+      {
+        type: "image",
+        src: "src/lib/assets/projects/bugscraper/2.png"
+      },
+      {
+        type: "image",
+        src: "src/lib/assets/projects/bugscraper/3.png"
+      },
+      {
+        type: "image",
+        src: "src/lib/assets/projects/bugscraper/4.png"
+      },
+      {
+        type: "image",
+        src: "src/lib/assets/projects/bugscraper/5.png"
+      },
+      {
+        type: "image",
+        src: "src/lib/assets/projects/bugscraper/6.png"
+      },
+      {
+        type: "image",
+        src: "src/lib/assets/projects/bugscraper/7.png"
+      }
+    ],
+    links: [
+      { url: "https://bugscraper.net/", text: "Website" },
+      {
+        url: "https://store.steampowered.com/app/2957130/Bugscraper/",
+        text: "Steam"
+      },
+      {
+        url: "https://yolwoocle.itch.io/bugscraper/",
+        text: "itch.io"
+      }
+    ],
+    children: ($$renderer2) => {
+      $$renderer2.push(`<p>Welcome to the Bugscraper.</p> <p>Bugscraper is a solo or co-op roguelike shooter. As you climb 
+        toward your tyrannical boss's office, you'll battle floor after 
+        floor of enemies. Using a wide arsenal of weapons and upgrades, 
+        mow them down and aim for the top!</p>`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----> `);
+  ProjectDisplay($$renderer, {
+    id: "globs",
+    inverted: true,
+    title: "Globs",
+    slides: [
+      {
+        type: "video",
+        src: "https://www.youtube.com/watch?v=qRrZuPRicrI"
+      },
+      { type: "image", src: "src/lib/assets/projects/globs/01.png" },
+      { type: "image", src: "src/lib/assets/projects/globs/02.png" },
+      { type: "image", src: "src/lib/assets/projects/globs/03.png" },
+      { type: "image", src: "src/lib/assets/projects/globs/04.png" },
+      { type: "image", src: "src/lib/assets/projects/globs/05.png" },
+      { type: "image", src: "src/lib/assets/projects/globs/06.png" },
+      { type: "image", src: "src/lib/assets/projects/globs/07.png" }
+    ],
+    links: [
+      {
+        url: "https://store.steampowered.com/app/3219110/Globs/",
+        text: "Steam"
+      },
+      { url: "https://ninesliced.itch.io/globs", text: "itch.io" },
+      {
+        url: "https://play.google.com/store/apps/details?id=com.yolwoocle.globs",
+        text: "Play Store"
+      },
+      {
+        url: "https://apps.apple.com/us/app/globs-a-colorful-puzzle-game/id6738417089",
+        text: "App Store"
+      }
+    ],
+    children: ($$renderer2) => {
+      $$renderer2.push(`<p>Meet the size-changing Globs in this colorful puzzle game. Use the curious 
+          properties of their bodies at your advantage to solve a variety of puzzles, 
+          all in a expressive pixel art aesthetic and upbeat soundtrack.</p>`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----> `);
+  ProjectDisplay($$renderer, {
+    id: "maby",
+    title: "Maby",
+    slides: [
+      {
+        type: "video",
+        src: "https://www.youtube.com/watch?v=1sj2LZeWa9M"
+      },
+      { type: "image", src: "src/lib/assets/projects/maby/01.png" },
+      { type: "image", src: "src/lib/assets/projects/maby/02.png" }
+    ],
+    links: [{ url: "https://ninesliced.itch.io/maby", text: "itch.io" }],
+    children: ($$renderer2) => {
+      $$renderer2.push(`<p>Meet a cute bunny named Maby trying to escape really bad wolves in a season-themed maze.
+        This game was made for the GMTK Game Jam 2025, which upholded the Loop theme this time around. 
+        In this game, your actions loop... and so does the map!</p>`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----></div> `);
+  Separator($$renderer, { type: "up", bgColor: "#A7E257", position: "top-0" });
+  $$renderer.push(`<!----> `);
+  Separator($$renderer, { type: "up_orange", bgColor: "#EEF49A", position: "top-0" });
+  $$renderer.push(`<!----> <div id="modding" class="flex w-full flex-col items-center bg-[#FAAD38] p-8 py-18 text-center text-white"><div class="mb-6 flex flex-row gap-5 items-center"><img${attr("src", moddingMascot)} alt="Ninesliced modding mascot" class="h-[80px]"/> `);
+  OutlinedText($$renderer, {
+    textSize: "3rem",
+    strokeWidth: "8px",
+    children: ($$renderer2) => {
+      $$renderer2.push(`<!---->Modding`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----></div> `);
+  ProjectDisplay($$renderer, {
+    id: "bettermap",
+    inverted: true,
+    title: "BetterMap",
+    backgroundColor: "#FBEB9C",
+    slides: [
+      {
+        type: "video",
+        src: "https://www.youtube.com/watch?v=mdUiaKpZ6JI"
+      },
+      {
+        type: "image",
+        src: "src/lib/assets/projects/bettermap/bigmap.png"
+      },
+      {
+        type: "image",
+        src: "src/lib/assets/projects/bettermap/waypoint_edit-png.png"
+      },
+      {
+        type: "image",
+        src: "src/lib/assets/projects/bettermap/bettermap_config_ui-png.png"
+      },
+      {
+        type: "image",
+        src: "src/lib/assets/projects/bettermap/cave_mode_2-png.png"
+      }
+    ],
+    links: [
+      {
+        url: "https://www.curseforge.com/hytale/mods/bettermap/",
+        text: "CurseForge"
+      },
+      {
+        url: "https://github.com/ninesliced/Hytale-BetterMap/",
+        text: "GitHub"
+      },
+      { url: "https://discord.gg/8q7NCUm4xw", text: "Discord" }
+    ],
+    children: ($$renderer2) => {
+      $$renderer2.push(`<p>Enhance Hytale's world exploration with saved map data, cave map rendering, 
+        customizable zoom, waypoints, shared mapping, and performance-optimized rendering.</p>`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----></div> `);
+  Separator($$renderer, { type: "up", bgColor: "#FAAD38", position: "" });
+  $$renderer.push(`<!----> `);
+  Separator($$renderer, { type: "down", bgColor: "#A7E257", position: "" });
+  $$renderer.push(`<!----> <div id="about" class="flex w-full flex-col items-center"><div class="w-full bg-[#A7E257] text-center text-white p-8 py-18"><div class="flex flex-col items-center justify-center"><div class="mb-6">`);
+  OutlinedText($$renderer, {
+    textSize: "3rem",
+    strokeWidth: "8px",
+    children: ($$renderer2) => {
+      $$renderer2.push(`<!---->About`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----></div> <div class="mb-8 flex flex-col gap-4 items-center max-w-[600px]">`);
+  OutlinedText($$renderer, {
+    textSize: "1.5rem",
+    strokeWidth: "6px",
+    children: ($$renderer2) => {
+      $$renderer2.push(`<!---->Ninesliced was created in sunny Montpellier by a bunch of friends under our common love for creating things.`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----> `);
+  OutlinedText($$renderer, {
+    textSize: "1.5rem",
+    strokeWidth: "6px",
+    children: ($$renderer2) => {
+      $$renderer2.push(`<!---->It was made with the idea of having a borderless team. We like to think of it like a game making band.`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----> `);
+  OutlinedText($$renderer, { textSize: "1.5rem", strokeWidth: "6px" });
+  $$renderer.push(`<!----></div> <div class="mb-12 w-full max-w-[1000px] flex flex-row flex-wrap items-center justify-center gap-y-5"><!--[-->`);
+  const each_array = ensure_array_like(shuffle([
+    {
+      name: "Nolan Carlisi",
+      link: "https://arkanyota.com",
+      linkText: "Website",
+      linkIcon: websiteLogo,
+      image: nolanImage
+    },
+    {
+      name: "Léo Bernard",
+      link: "https://www.yolwoocle.com",
+      linkText: "Website",
+      linkIcon: websiteLogo,
+      image: leoImage
+    },
+    {
+      name: "Guillaume Tran",
+      link: "https://notgoyome.github.io",
+      linkText: "Website",
+      linkIcon: websiteLogo,
+      image: guillaumeImage
+    },
+    {
+      name: "Théodore Billotte",
+      link: "https://www.linkedin.com/in/theodore-billotte",
+      linkText: "LinkedIn",
+      linkIcon: linkedinLogo,
+      image: theodoreImage
+    },
+    {
+      name: "Louis Rollet",
+      link: "https://www.linkedin.com/in/louis-rollet/",
+      linkText: "LinkedIn",
+      linkIcon: linkedinLogo,
+      image: louisImage
+    },
+    {
+      name: "Alexis Belmonte",
+      link: "https://www.linkedin.com/in/alexis-belmonte/",
+      linkText: "LinkedIn",
+      linkIcon: linkedinLogo,
+      image: alexisImage
+    }
+  ]));
+  for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
+    let person = each_array[$$index];
+    $$renderer.push(`<div class="flex flex-col w-60 gap-2 items-center">`);
+    BlobImage($$renderer, { src: person.image, alt: person.name });
+    $$renderer.push(`<!----> <div>`);
+    OutlinedText($$renderer, {
+      textSize: "1.7rem",
+      strokeWidth: "6px",
+      children: ($$renderer2) => {
+        $$renderer2.push(`<!---->${escape_html(person.name)}`);
+      },
+      $$slots: { default: true }
+    });
+    $$renderer.push(`<!----></div> <div class="bg-[#EEF49A] p-1 px-3 rounded-full"><a${attr("href", person.link)} class="flex flex-row gap-1 items-center"><img${attr("src", person.linkIcon)}${attr("alt", person.linkText)} class="h-8"/> `);
+    OutlinedText($$renderer, {
+      textSize: "1rem",
+      strokeWidth: "5px",
+      children: ($$renderer2) => {
+        $$renderer2.push(`<!---->${escape_html(person.linkText)}`);
+      },
+      $$slots: { default: true }
+    });
+    $$renderer.push(`<!----></a></div></div>`);
+  }
+  $$renderer.push(`<!--]--></div> <div class="mb-8 flex flex-row gap-3 items-center justify-center flex-wrap max-w-200"><!--[-->`);
+  const each_array_1 = ensure_array_like([
+    {
+      icon: twitterLogo,
+      url: "https://x.com/ninesliced",
+      text: "Twitter"
+    },
+    {
+      icon: blueskyLogo,
+      url: "https://bsky.app/profile/ninesliced.com",
+      text: "Bluesky"
+    },
+    {
+      icon: itchioLogo,
+      url: "https://ninesliced.itch.io/",
+      text: "itch.io"
+    },
+    {
+      icon: steamLogo,
+      url: "https://store.steampowered.com/publisher/ninesliced",
+      text: "Steam"
+    },
+    {
+      icon: instagramLogo,
+      url: "https://instagram.com/ninesliced_games",
+      text: "Instagram"
+    },
+    {
+      icon: youtubeLogo,
+      url: "https://youtube.com/@ninesliced_games",
+      text: "YouTube"
+    },
+    {
+      icon: githubLogo,
+      url: "https://github.com/ninesliced",
+      text: "Github"
+    }
+  ]);
+  for (let $$index_1 = 0, $$length = each_array_1.length; $$index_1 < $$length; $$index_1++) {
+    let social = each_array_1[$$index_1];
+    $$renderer.push(`<!---->} <div class="bg-[#EEF49A] p-2 px-5 rounded-full"><a${attr("href", social.url)} class="flex flex-row gap-2 items-center"><img${attr("src", social.icon)}${attr("alt", social.text)} class="h-10"/> `);
+    OutlinedText($$renderer, {
+      textSize: "1.5rem",
+      strokeWidth: "6px",
+      children: ($$renderer2) => {
+        $$renderer2.push(`<!---->${escape_html(social.text)}`);
+      },
+      $$slots: { default: true }
+    });
+    $$renderer.push(`<!----></a></div>`);
+  }
+  $$renderer.push(`<!--]--></div> <div class="flex flex-col gap-3 items-center">`);
+  OutlinedText($$renderer, {
+    textSize: "1.5rem",
+    strokeWidth: "6px",
+    children: ($$renderer2) => {
+      $$renderer2.push(`<!---->Please prioritize email for business-related enquiries.`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----> `);
+  OutlinedText($$renderer, {
+    textSize: "1.5rem",
+    strokeWidth: "6px",
+    children: ($$renderer2) => {
+      $$renderer2.push(`<!---->Games: ninesliced@gmail.com`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----> `);
+  OutlinedText($$renderer, {
+    textSize: "1.5rem",
+    strokeWidth: "6px",
+    children: ($$renderer2) => {
+      $$renderer2.push(`<!---->Mods: ninesliced.modding@gmail.com`);
+    },
+    $$slots: { default: true }
+  });
+  $$renderer.push(`<!----></div></div></div></div></div>`);
+}
+export {
+  _page as default
+};
