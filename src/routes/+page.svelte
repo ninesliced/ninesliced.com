@@ -3,6 +3,25 @@
   import OutlinedText from './OutlinedText.svelte';
   import ProjectDisplay from './ProjectDisplay.svelte';
   import Separator from '$lib/Separator.svelte';
+  import ninenslicedLogo from '$lib/assets/branding/logo/ninesliced_logo_transp.svg';
+  import slicedingsStack from '$lib/assets/page/slicelings_stack.svg';
+  import gamesMascot from '$lib/assets/page/ninesliced_games_mascot_flipx.svg';
+  import moddingMascot from '$lib/assets/page/ninesliced_modding_mascot.svg';
+  import websiteLogo from '$lib/assets/page/logos/website.svg';
+  import linkedinLogo from '$lib/assets/page/logos/linkedin.svg';
+  import twitterLogo from '$lib/assets/page/logos/twitter.svg';
+  import blueskyLogo from '$lib/assets/page/logos/bluesky.svg';
+  import itchioLogo from '$lib/assets/page/logos/itchio.svg';
+  import steamLogo from '$lib/assets/page/logos/steam.svg';
+  import instagramLogo from '$lib/assets/page/logos/instagram.svg';
+  import youtubeLogo from '$lib/assets/page/logos/youtube.svg';
+  import githubLogo from '$lib/assets/page/logos/github.svg';
+  import nolanImage from '$lib/assets/page/about/nolan.jpg';
+  import leoImage from '$lib/assets/page/about/leo.jpg';
+  import guillaumeImage from '$lib/assets/page/about/guillaumedrawing.png';
+  import theodoreImage from '$lib/assets/page/about/theodore.jpg';
+  import louisImage from '$lib/assets/page/about/louisrollet.jpg';
+  import alexisImage from '$lib/assets/page/about/alexis.jpg';
 
   function shuffle(array: Array<any>) {
     // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -28,7 +47,7 @@
 
   <div class="flex h-screen w-full flex-col items-center justify-center bg-[#A7E257]">
     <img
-      src="src/lib/assets/branding/logo/ninesliced_logo_transp.svg"
+      src={ninenslicedLogo}
       alt="Ninesliced logo"
       class="outline-red h-80 w-auto p-6"
     />
@@ -48,7 +67,7 @@
 
       <div>
         <img
-          src="src/lib/assets/page/slicelings_stack.svg"
+          src={slicedingsStack}
           alt="Sliceling stack"
           class="my-12 w-50"
         />
@@ -67,7 +86,7 @@
     <div class="mb-6 flex flex-row gap-5 items-center">
       <OutlinedText textSize="3rem" strokeWidth="8px">Games</OutlinedText>
       <img
-        src="src/lib/assets/page/ninesliced_games_mascot_flipx.svg"
+        src={gamesMascot}
         alt="Ninesliced mascot"
         class="h-[80px]"
       />
@@ -242,7 +261,7 @@
   <div id="modding" class="flex w-full flex-col items-center bg-[#FAAD38] p-8 py-18 text-center text-white">
     <div class="mb-6 flex flex-row gap-5 items-center">
       <img
-        src="src/lib/assets/page/ninesliced_modding_mascot.svg"
+        src={moddingMascot}
         alt="Ninesliced modding mascot"
         class="h-[80px]"
       />
@@ -312,12 +331,10 @@
 
         <div class="mb-8 flex flex-col gap-4 items-center max-w-[600px]">
           <OutlinedText textSize="1.5rem" strokeWidth="6px">
-            Ninesliced was created in sunny Montpellier by a bunch of friends 
-            under our common love for creating things. 
+            Ninesliced was created in sunny Montpellier by a bunch of friends under our common love for creating things. 
           </OutlinedText>
           <OutlinedText textSize="1.5rem" strokeWidth="6px">
-            It was made with the idea of having a borderless team. We like to think of it 
-            like a game making band.
+            It was made with the idea of having a borderless team. We like to think of it like a game making band.
           </OutlinedText>
           <OutlinedText textSize="1.5rem" strokeWidth="6px">
           </OutlinedText>
@@ -329,44 +346,44 @@
               name: "Nolan Carlisi",
               link: "https://arkanyota.com",
               linkText: "Website",
-              linkIcon: "src/lib/assets/page/logos/website.svg",
-              image: "src/lib/assets/page/about/nolan.jpg",
+              linkIcon: websiteLogo,
+              image: nolanImage,
             },
             {
               name: "Léo Bernard",
               link: "https://www.yolwoocle.com",
               linkText: "Website",
-              linkIcon: "src/lib/assets/page/logos/website.svg",
-              image: "src/lib/assets/page/about/leo.jpg",
+              linkIcon: websiteLogo,
+              image: leoImage,
             },
             {
               name: "Guillaume Tran",
               link: "https://notgoyome.github.io",
               linkText: "Website",
-              linkIcon: "src/lib/assets/page/logos/website.svg",
-              image: "src/lib/assets/page/about/guillaumedrawing.png",
+              linkIcon: websiteLogo,
+              image: guillaumeImage,
             },
             {
               name: "Théodore Billotte",
               link: "https://www.linkedin.com/in/theodore-billotte",
               linkText: "LinkedIn",
-              linkIcon: "src/lib/assets/page/logos/linkedin.svg",
-              image: "src/lib/assets/page/about/theodore.jpg",
+              linkIcon: linkedinLogo,
+              image: theodoreImage,
             },
             {
               name: "Louis Rollet",
               link: "https://www.linkedin.com/in/louis-rollet/",
               linkText: "LinkedIn",
-              linkIcon: "src/lib/assets/page/logos/linkedin.svg",
+              linkIcon: linkedinLogo,
 
-              image: "src/lib/assets/page/about/louisrollet.jpg",
+              image: louisImage,
             },
             {
               name: "Alexis Belmonte",
               link: "https://www.linkedin.com/in/alexis-belmonte/",
               linkText: "LinkedIn",
-              linkIcon: "src/lib/assets/page/logos/linkedin.svg",
-              image: "src/lib/assets/page/about/alexis.jpg",
+              linkIcon: linkedinLogo,
+              image: alexisImage,
             },
           ]) as person}
             <div class="flex flex-col w-60 gap-2 items-center">
@@ -395,41 +412,41 @@
         <div class="mb-8 flex flex-row gap-3 items-center justify-center flex-wrap max-w-200">
           {#each [
             {
-              icon:"src/lib/assets/page/logos/twitter.svg", 
+              icon: twitterLogo,
               url: "https://x.com/ninesliced",
               text: "Twitter",
             },
             {
-              icon:"src/lib/assets/page/logos/bluesky.svg", 
+              icon: blueskyLogo,
               url: "https://bsky.app/profile/ninesliced.com",
               text: "Bluesky",
             },
             {
-              icon:"src/lib/assets/page/logos/itchio.svg", 
+              icon: itchioLogo,
               url: "https://ninesliced.itch.io/",
               text: "itch.io",
             },
             {
-              icon:"src/lib/assets/page/logos/steam.svg", 
+              icon: steamLogo,
               url: "https://store.steampowered.com/publisher/ninesliced",
               text: "Steam",
             },
             {
-              icon:"src/lib/assets/page/logos/instagram.svg", 
+              icon: instagramLogo,
               url: "https://instagram.com/ninesliced_games",
               text: "Instagram",
             },
             {
-              icon:"src/lib/assets/page/logos/youtube.svg", 
+              icon: youtubeLogo,
               url: "https://youtube.com/@ninesliced_games",
               text: "YouTube",
             },
             {
-              icon:"src/lib/assets/page/logos/github.svg", 
+              icon: githubLogo,
               url: "https://github.com/ninesliced",
               text: "Github",
             },
-          ] as social}
+          ] as social}}
             <div class="bg-[#EEF49A] p-2 px-5 rounded-full">
               <a href={social.url} class="flex flex-row gap-2 items-center">
                 <img
