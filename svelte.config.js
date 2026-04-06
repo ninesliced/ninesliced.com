@@ -22,9 +22,6 @@ const config = {
 		}),
 		paths: {
 			base: '',
-		},
-		prerender: {
-			handleMissingId: 'warn'
 		}
 	}
 };

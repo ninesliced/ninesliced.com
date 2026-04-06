@@ -1,10 +1,6 @@
 <script lang="ts">
   import './layout.css';
   import favicon from '$lib/assets/favicon.svg';
-  import twitterLogo from '$lib/assets/page/logos/twitter.svg';
-  import blueskyLogo from '$lib/assets/page/logos/bluesky.svg';
-  import instagramLogo from '$lib/assets/page/logos/instagram.svg';
-  import youtubeLogo from '$lib/assets/page/logos/youtube.svg';
   
   import OutlinedText from './OutlinedText.svelte';
 
@@ -19,28 +15,28 @@
 <nav class="fixed top-0 z-300 flex w-full flex-row items-center justify-end gap-3 bg-[#A7E257] p-4 px-8">
   <a href="https://x.com/ninesliced" class="flex flex-row gap-2 items-center">
     <img
-      src={twitterLogo}
+      src="src/lib/assets/page/logos/twitter.svg"
       alt="Twitter"
       class="h-10"
     />
   </a>
   <a href="https://bsky.app/profile/ninesliced.com" class="flex flex-row gap-2 items-center">
     <img
-      src={blueskyLogo}
+      src="src/lib/assets/page/logos/bluesky.svg"
       alt="Bluesky"
       class="h-10"
     />
   </a>
   <a href="https://instagram.com/ninesliced_games" class="flex flex-row gap-2 items-center">
     <img
-      src={instagramLogo}
+      src="src/lib/assets/page/logos/instagram.svg"
       alt="Instagram"
       class="h-10"
     />
   </a>
   <a href="https://youtube.com/@ninesliced_games" class="flex flex-row gap-2 items-center">
     <img
-      src={youtubeLogo}
+      src="src/lib/assets/page/logos/youtube.svg"
       alt="Youtube"
       class="h-10"
     />
