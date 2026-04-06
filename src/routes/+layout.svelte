@@ -42,15 +42,15 @@
     />
   </a>
 
-  <a href="#games" class="hidden sm:inline-block top-0 left-0 text-2xl font-bold px-2">
+  <a href="/#games" class="hidden sm:inline-block top-0 left-0 text-2xl font-bold px-2">
     <OutlinedText textSize="1.5rem" strokeWidth="6px">Games</OutlinedText>
   </a>
 
-  <a href="#modding" class="hidden sm:inline-block top-0 left-0 text-2xl font-bold px-2">
+  <a href="/#modding" class="hidden sm:inline-block top-0 left-0 text-2xl font-bold px-2">
     <OutlinedText textSize="1.5rem" strokeWidth="6px">Modding</OutlinedText>
   </a>
 
-  <a href="#about" class="hidden sm:inline-block top-0 left-0 text-2xl font-bold px-2">
+  <a href="/#about" class="hidden sm:inline-block top-0 left-0 text-2xl font-bold px-2">
     <OutlinedText textSize="1.5rem" strokeWidth="6px">About</OutlinedText>
   </a>
 </nav>
