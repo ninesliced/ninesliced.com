@@ -257,7 +257,7 @@
       slides={[
         {
           type: 'video',
-          src: 'https://www.youtube.com/watch?v=mdUiaKpZ6JI'
+          src: 'https://www.youtube.com/watch?v=FHfsJJ_DvOU'
         },
         {
           type: 'image',
