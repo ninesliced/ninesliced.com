@@ -39,7 +39,7 @@
 
   </div>
 
-  <div class="w-full bg-[#EEF49A] text-center text-white">
+  <div class="w-full bg-[#EEF49A] text-center text-white px-4">
     <div class="flex flex-col items-center justify-center py-18">
       <OutlinedText textSize="2rem" strokeWidth="7px">
         When life gives you lemons,<br />

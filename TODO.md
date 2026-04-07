@@ -1,6 +1,7 @@
 - [ ] random blobimage rotation on chrome
 - [ ] div padding for introduciton on mobile
 - [ ] first separator doesn't display correctly on firefox mobile
+- [ ] big carousel when clicking an image
 
 DONE 
 - [x] looping & responsive separators
