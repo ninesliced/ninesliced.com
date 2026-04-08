@@ -344,7 +344,7 @@
               link: "https://notgoyome.github.io",
               linkText: "Website",
               linkIcon: "/assets/page/logos/website.svg",
-              image: "/assets/page/about/guillaumedrawing.png",
+              image: "/assets/page/about/guillaume.jpg",
             },
             {
               name: "Théodore Billotte",
