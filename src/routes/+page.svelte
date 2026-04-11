@@ -239,7 +239,7 @@
 
   <Separator type="up_orange" bgColor="#EEF49A" position="top-0" />
 
-  <div id="modding" class="flex w-full flex-col items-center bg-[#FAAD38] p-8 py-18 text-center text-white">
+  <div id="modding" class="flex w-full flex-col items-center bg-[#F38043] p-8 py-18 text-center text-white">
     <div class="mb-6 flex flex-row gap-5 items-center">
       <img
         src="/assets/page/ninesliced_modding_mascot.svg"
@@ -299,7 +299,7 @@
   </div>
 
 
-  <Separator type="up" bgColor="#FAAD38" position="" />
+  <Separator type="up" bgColor="#F38043" position="" />
 
   <Separator type="down" bgColor="#A7E257" position="" />
 

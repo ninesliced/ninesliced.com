@@ -1,5 +1,5 @@
-- [ ] random blobimage rotation on chrome
 - [ ] first separator doesn't display correctly on firefox mobile
+- [ ] random blobimage rotation on chrome
 - [ ] big carousel when clicking an image
 
 DONE 
