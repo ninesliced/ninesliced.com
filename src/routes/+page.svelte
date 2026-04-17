@@ -521,11 +521,11 @@
                 text: "Discord (Mods)",
               },
             ]} />
-          </div>
-          <div class="flex flex-col gap-3 items-center">
-            <OutlinedText textSize="1.5rem" strokeWidth="6px">
-              nin&#101;sliced.modding&#64;gm&#97;il&#46;com
-            </OutlinedText>
+            <div class="flex flex-col gap-3 items-center">
+              <OutlinedText textSize="1.5rem" strokeWidth="6px">
+                nin&#101;sliced.modding&#64;gm&#97;il&#46;com
+              </OutlinedText>
+            </div>
           </div>
         </div>
 
