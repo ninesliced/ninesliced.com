@@ -3,6 +3,7 @@
   import OutlinedText from './OutlinedText.svelte';
   import ProjectDisplay from './ProjectDisplay.svelte';
   import Separator from '$lib/Separator.svelte';
+  import SocialLinks from './SocialLinks.svelte';
 
   function shuffle(array: Array<any>) {
     // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -248,10 +249,55 @@
       />
       <OutlinedText textSize="3rem" strokeWidth="8px">Modding</OutlinedText>
     </div>
+    
+    <ProjectDisplay 
+      id="unstablerifts"
+      inverted={true}
+      title="Unstable Rifts"
+      backgroundColor="#FBEB9C"
+      slides={[
+        {
+          type: 'video',
+          src: 'https://www.youtube.com/watch?v=nLEJbjbvrg4'
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/unstablerifts/fight-jpg.png',
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/unstablerifts/all_the_guns-png.png',
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/unstablerifts/shop-jpg.png',
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/unstablerifts/map-png.png',
+        },
+      ]}
+      links={[
+        {
+          url: "https://www.curseforge.com/hytale/mods/unstable-rifts",
+          text: "CurseForge"
+        },
+        {
+          url: "https://github.com/ninesliced/UnstableRifts",
+          text: "GitHub"
+        },
+      ]}
+    >
+      <p>
+        A top-down roguelike shooter game mode with custom guns, armors and 
+        enemies in which your objective is to save the kweebecs that are being 
+        infected by an unknown new faction.
+      </p>
+    </ProjectDisplay>
 
     <ProjectDisplay 
       id="bettermap"
-      inverted={true}
+      inverted={false}
       title="BetterMap"
       backgroundColor="#FBEB9C"
       slides={[
@@ -310,17 +356,13 @@
           <OutlinedText textSize="3rem" strokeWidth="8px">About</OutlinedText>
         </div>
 
-        <div class="mb-8 flex flex-col gap-4 items-center max-w-[600px]">
-          <OutlinedText textSize="1.5rem" strokeWidth="6px">
-            Ninesliced was created in sunny Montpellier by a bunch of friends 
-            under our common love for creating things. 
-          </OutlinedText>
-          <OutlinedText textSize="1.5rem" strokeWidth="6px">
-            It was made with the idea of having a borderless team. We like to think of it 
-            like a game making band.
-          </OutlinedText>
-          <OutlinedText textSize="1.5rem" strokeWidth="6px">
-          </OutlinedText>
+        <div class="mb-8 flex flex-col gap-4 items-center max-w-[600px] text-[#222123] text-[1.5rem] bg-[#EEF49A] p-6 rounded-2xl">
+          <p>
+            Ninesliced was created in sunny Montpellier by a bunch of friends under our common love for creating things. 
+          </p>
+          <p>
+            It was made with the idea of having being borderless, in its team, but also in its ideas. We like to think of it like a game making band.
+          </p>
         </div>
 
         <div class="mb-12 w-full max-w-[1000px] flex flex-row flex-wrap items-center justify-center gap-y-5">
@@ -392,67 +434,101 @@
           {/each}
         </div>
 
-        <div class="mb-8 flex flex-row gap-3 items-center justify-center flex-wrap max-w-200">
-          {#each [
-            {
-              icon:"/assets/page/logos/twitter.svg", 
-              url: "https://x.com/ninesliced",
-              text: "Twitter",
-            },
-            {
-              icon:"/assets/page/logos/bluesky.svg", 
-              url: "https://bsky.app/profile/ninesliced.com",
-              text: "Bluesky",
-            },
-            {
-              icon:"/assets/page/logos/itchio.svg", 
-              url: "https://ninesliced.itch.io/",
-              text: "itch.io",
-            },
-            {
-              icon:"/assets/page/logos/steam.svg", 
-              url: "https://store.steampowered.com/publisher/ninesliced",
-              text: "Steam",
-            },
-            {
-              icon:"/assets/page/logos/instagram.svg", 
-              url: "https://instagram.com/ninesliced_games",
-              text: "Instagram",
-            },
-            {
-              icon:"/assets/page/logos/youtube.svg", 
-              url: "https://youtube.com/@ninesliced_games",
-              text: "YouTube",
-            },
-            {
-              icon:"/assets/page/logos/github.svg", 
-              url: "https://github.com/ninesliced",
-              text: "Github",
-            },
-          ] as social}
-            <div class="bg-[#EEF49A] p-2 px-5 rounded-full">
-              <a href={social.url} class="flex flex-row gap-2 items-center">
-                <img
-                  src={social.icon}
-                  alt={social.text}
-                  class="h-10"
-                />
-                <OutlinedText textSize="1.5rem" strokeWidth="6px">{social.text}</OutlinedText>
-              </a>
+        <div class="mb-8 flex flex-col gap-10 items-center">
+          <div class="flex flex-col gap-3 items-center">
+            <OutlinedText textSize="2rem" strokeWidth="7px">
+              Socials
+            </OutlinedText>
+            <OutlinedText textSize="1.2rem" strokeWidth="5px">
+              (Please prioritize email for business-related enquiries.)
+            </OutlinedText>
+          </div>
+          <div class="flex flex-col gap-3 items-center">
+            <OutlinedText textSize="1.7rem" strokeWidth="6px">
+              Games / General
+            </OutlinedText>
+            <SocialLinks socials={[{
+                icon:"/assets/page/logos/twitter.svg", 
+                url: "https://x.com/ninesliced",
+                text: "Twitter",
+              },
+              {
+                icon:"/assets/page/logos/bluesky.svg", 
+                url: "https://bsky.app/profile/ninesliced.com",
+                text: "Bluesky",
+              },
+              {
+                icon:"/assets/page/logos/itchio.svg", 
+                url: "https://ninesliced.itch.io/",
+                text: "itch.io",
+              },
+              {
+                icon:"/assets/page/logos/steam.svg", 
+                url: "https://store.steampowered.com/publisher/ninesliced",
+                text: "Steam",
+              },
+              {
+                icon:"/assets/page/logos/instagram.svg", 
+                url: "https://instagram.com/ninesliced_games",
+                text: "Instagram",
+              },
+              {
+                icon:"/assets/page/logos/youtube.svg", 
+                url: "https://youtube.com/@ninesliced_games",
+                text: "YouTube",
+              },
+              {
+                icon:"/assets/page/logos/github.svg", 
+                url: "https://github.com/ninesliced",
+                text: "Github",
+              },
+              {
+                icon:"/assets/page/logos/linkedin.svg", 
+                url: "https://www.linkedin.com/company/ninesliced",
+                text: "LinkedIn",
+              },
+              {
+                icon:"/assets/page/logos/discord.svg", 
+                url: "https://discord.gg/BAMMwMn2m5",
+                text: "Discord (Games)",
+              },
+            ]} />
+            <div class="flex flex-col gap-3 items-center">
+              <OutlinedText textSize="1.5rem" strokeWidth="6px">
+                nin&#101;sliced&#64;gm&#97;il&#46;com
+              </OutlinedText>
             </div>
-          {/each}
+          </div>
+
+          <div class="flex flex-col gap-3 items-center">
+            <OutlinedText textSize="1.7rem" strokeWidth="6px">
+              Modding
+            </OutlinedText>
+            <SocialLinks socials={[
+              {
+                icon:"/assets/page/logos/twitter.svg", 
+                url: "https://x.com/NineslicedMod",
+                text: "Twitter",
+              },
+              {
+                icon:"/assets/page/logos/linkedin.svg", 
+                url: "https://www.linkedin.com/showcase/ninesliced-modding",
+                text: "LinkedIn",
+              },
+              {
+                icon:"/assets/page/logos/discord.svg", 
+                url: "https://discord.gg/VU4aG98ckH",
+                text: "Discord (Mods)",
+              },
+            ]} />
+          </div>
+          <div class="flex flex-col gap-3 items-center">
+            <OutlinedText textSize="1.5rem" strokeWidth="6px">
+              nin&#101;sliced.modding&#64;gm&#97;il&#46;com
+            </OutlinedText>
+          </div>
         </div>
-        <div class="flex flex-col gap-3 items-center">
-          <OutlinedText textSize="1.5rem" strokeWidth="6px">
-            Please prioritize email for business-related enquiries.
-          </OutlinedText>
-          <OutlinedText textSize="1.5rem" strokeWidth="6px">
-            Games: nin&#101;sliced&#64;gm&#97;il&#46;com
-          </OutlinedText>
-          <OutlinedText textSize="1.5rem" strokeWidth="6px">
-            Mods: nin&#101;sliced.modding&#64;gm&#97;il&#46;com
-          </OutlinedText>
-        </div>
+
       </div>
     </div>
   </div>

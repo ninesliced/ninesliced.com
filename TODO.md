@@ -1,6 +1,8 @@
 - [ ] first separator doesn't display correctly on firefox mobile
 - [ ] random blobimage rotation on chrome
 - [ ] big carousel when clicking an image
+- [ ] add discord link (modding & games)
+- [ ] add meta tags
 
 DONE 
 - [x] div padding for introduciton on mobile
