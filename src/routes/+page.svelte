@@ -80,7 +80,7 @@
       slides={[
         {
           type: 'video',
-          src: 'https://www.youtube.com/watch?v=a4RG1y2lU4E'
+          src: 'https://www.youtube.com/watch?v=9Jgcwcnraf0'
         },
         {
           type: 'image',
@@ -258,7 +258,7 @@
       slides={[
         {
           type: 'video',
-          src: 'https://www.youtube.com/watch?v=nLEJbjbvrg4'
+          src: 'https://www.youtube.com/watch?v=IgGZ_UWvgrk'
         },
         {
           type: 'image',
