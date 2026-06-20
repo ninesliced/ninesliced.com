@@ -77,6 +77,7 @@
     <ProjectDisplay 
       id="bugscraper"
       title="Bugscraper"
+      inverted={true}
       slides={[
         {
           type: 'video',
@@ -135,6 +136,54 @@
         toward your tyrannical boss's office, you'll battle floor after 
         floor of enemies. Using a wide arsenal of weapons and upgrades, 
         mow them down and aim for the top!
+
+      </p>
+    </ProjectDisplay>
+
+    <ProjectDisplay 
+      id="naucto"
+      title="Naucto"
+      inverted={false}
+      slides={[
+        {
+          type: 'video',
+          src: 'https://www.youtube.com/watch?v=IhvRvVgW-Jo' 
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/naucto/1.png',
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/naucto/2.png',
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/naucto/3.png',
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/naucto/4.png',
+        },
+      ]}
+      links = {[
+        {
+          url: "https://beta.naucto.net/",
+          text: "Website",
+        },
+        {
+          url: "https://github.com/Naucto",
+          text: "Github",
+        },
+      ]}
+    >
+
+      <p>
+With Naucto, collaborative game development in Lua has never been so easy: create a project, 
+share with your friends, and start building right away!<br>
+Ideal for game jams, demos, solo or multiplayer games: publishing on the hub lets you showcase your project to others!
+
+
 
       </p>
     </ProjectDisplay>
