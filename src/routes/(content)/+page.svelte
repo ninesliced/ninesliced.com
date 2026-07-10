@@ -177,14 +177,10 @@
         },
       ]}
     >
-
       <p>
-With Naucto, collaborative game development in Lua has never been so easy: create a project, 
-share with your friends, and start building right away!<br>
-Ideal for game jams, demos, solo or multiplayer games: publishing on the hub lets you showcase your project to others!
-
-
-
+        With Naucto, collaborative game development in Lua has never been so easy: create a project, 
+        share with your friends, and start building right away!<br>
+        Ideal for game jams, demos, solo or multiplayer games: publishing on the hub lets you showcase your project to others!
       </p>
     </ProjectDisplay>
 
@@ -490,6 +486,9 @@ Ideal for game jams, demos, solo or multiplayer games: publishing on the hub let
             </OutlinedText>
             <OutlinedText textSize="1.2rem" strokeWidth="5px">
               (Please prioritize email for business-related enquiries.)
+            </OutlinedText>
+            <OutlinedText textSize="1.2rem" strokeWidth="5px">
+              We do not distribute Steam keys by email.
             </OutlinedText>
           </div>
           <div class="flex flex-col gap-3 items-center">
