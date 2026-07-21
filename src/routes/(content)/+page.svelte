@@ -81,7 +81,7 @@
       slides={[
         {
           type: 'video',
-          src: 'https://www.youtube.com/watch?v=9Jgcwcnraf0' 
+          src: 'https://www.youtube.com/watch?v=-r8iK9P6csM' 
         },
         {
           type: 'image',
