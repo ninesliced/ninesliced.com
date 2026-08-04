@@ -77,7 +77,7 @@
     <ProjectDisplay 
       id="bugscraper"
       title="Bugscraper"
-      inverted={true}
+      inverted={false}
       slides={[
         {
           type: 'video',
@@ -140,53 +140,47 @@
       </p>
     </ProjectDisplay>
 
+
     <ProjectDisplay 
-      id="naucto"
-      title="Naucto"
-      inverted={false}
+      id="montic"
+      title="Montic"
+      inverted={true}
       slides={[
         {
           type: 'video',
-          src: 'https://www.youtube.com/watch?v=IhvRvVgW-Jo' 
+          src: 'https://www.youtube.com/watch?v=bl4T60oEZtM' 
         },
         {
           type: 'image',
-          src: '/assets/projects/naucto/1.png',
+          src: '/assets/projects/montic/image.png',
         },
         {
           type: 'image',
-          src: '/assets/projects/naucto/2.png',
+          src: '/assets/projects/montic/image2.png',
         },
         {
           type: 'image',
-          src: '/assets/projects/naucto/3.png',
-        },
-        {
-          type: 'image',
-          src: '/assets/projects/naucto/4.png',
+          src: '/assets/projects/montic/image3.png',
         },
       ]}
       links = {[
         {
-          url: "https://beta.naucto.net/",
-          text: "Website",
-        },
-        {
-          url: "https://github.com/Naucto",
-          text: "Github",
+          url: "https://ninesliced.itch.io/montic/",
+          text: "itch.io",
         },
       ]}
     >
       <p>
-        With Naucto, collaborative game development in Lua has never been so easy: create a project, 
-        share with your friends, and start building right away!<br>
-        Ideal for game jams, demos, solo or multiplayer games: publishing on the hub lets you showcase your project to others!
+        Protect spacetime from an invasion of time-eating termites in this turn-based defense game. 
+      </p>
+      <p>
+        Originally made for GMTK Game Jam 2026!
       </p>
     </ProjectDisplay>
 
     <ProjectDisplay 
       id="globs"
-      inverted={true}
+      inverted={false}
       title="Globs"
       slides={[
         {
@@ -252,6 +246,7 @@
     <ProjectDisplay 
       id="maby"
       title="Maby"
+      inverted={true}
       slides={[
         {
           type: 'video',
@@ -277,6 +272,51 @@
         Meet a cute bunny named Maby trying to escape really bad wolves in a season-themed maze.
         This game was made for the GMTK Game Jam 2025, which upholded the Loop theme this time around. 
         In this game, your actions loop... and so does the map!
+      </p>
+    </ProjectDisplay>
+
+    
+    <ProjectDisplay 
+      id="naucto"
+      title="Naucto"
+      inverted={false}
+      slides={[
+        {
+          type: 'video',
+          src: 'https://www.youtube.com/watch?v=IhvRvVgW-Jo' 
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/naucto/1.png',
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/naucto/2.png',
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/naucto/3.png',
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/naucto/4.png',
+        },
+      ]}
+      links = {[
+        {
+          url: "https://beta.naucto.net/",
+          text: "Website",
+        },
+        {
+          url: "https://github.com/Naucto",
+          text: "Github",
+        },
+      ]}
+    >
+      <p>
+        With Naucto, collaborative game development in Lua has never been so easy: create a project, 
+        share with your friends, and start building right away!<br>
+        Ideal for game jams, demos, solo or multiplayer games: publishing on the hub lets you showcase your project to others!
       </p>
     </ProjectDisplay>
   </div>
