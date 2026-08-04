@@ -140,47 +140,9 @@
       </p>
     </ProjectDisplay>
 
-
-    <ProjectDisplay 
-      id="montic"
-      title="Montic"
-      inverted={true}
-      slides={[
-        {
-          type: 'video',
-          src: 'https://www.youtube.com/watch?v=bl4T60oEZtM' 
-        },
-        {
-          type: 'image',
-          src: '/assets/projects/montic/image.png',
-        },
-        {
-          type: 'image',
-          src: '/assets/projects/montic/image2.png',
-        },
-        {
-          type: 'image',
-          src: '/assets/projects/montic/image3.png',
-        },
-      ]}
-      links = {[
-        {
-          url: "https://ninesliced.itch.io/montic/",
-          text: "itch.io",
-        },
-      ]}
-    >
-      <p>
-        Protect spacetime from an invasion of time-eating termites in this turn-based defense game. 
-      </p>
-      <p>
-        Originally made for GMTK Game Jam 2026!
-      </p>
-    </ProjectDisplay>
-
     <ProjectDisplay 
       id="globs"
-      inverted={false}
+      inverted={true}
       title="Globs"
       slides={[
         {
@@ -242,6 +204,43 @@
       </p>
     </ProjectDisplay>
 
+    
+    <ProjectDisplay 
+      id="montic"
+      title="Montic"
+      inverted={false}
+      slides={[
+        {
+          type: 'video',
+          src: 'https://www.youtube.com/watch?v=bl4T60oEZtM' 
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/montic/image.png',
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/montic/image2.png',
+        },
+        {
+          type: 'image',
+          src: '/assets/projects/montic/image3.png',
+        },
+      ]}
+      links = {[
+        {
+          url: "https://ninesliced.itch.io/montic/",
+          text: "itch.io",
+        },
+      ]}
+    >
+      <p>
+        Protect spacetime from an invasion of time-eating termites in this turn-based defense game. 
+      </p>
+      <p>
+        Originally made for GMTK Game Jam 2026!
+      </p>
+    </ProjectDisplay>
     
     <ProjectDisplay 
       id="maby"
@@ -475,9 +474,9 @@
             },
             {
               name: "Théodore Billotte",
-              link: "https://www.linkedin.com/in/theodore-billotte",
-              linkText: "LinkedIn",
-              linkIcon: "/assets/page/logos/linkedin.svg",
+              link: "https://theodore.billotte.net/",
+              linkText: "Website",
+              linkIcon: "/assets/page/logos/website.svg",
               image: "/assets/page/about/theodore.jpg",
             },
             {
